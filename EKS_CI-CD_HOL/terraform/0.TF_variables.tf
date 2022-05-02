@@ -36,6 +36,8 @@ variable "vpc_cidr" {
   type        = string
   default     = "192.168.0.0/16"
 }
+
+#jenkins, harbor용 vpc 추가 - 이재정
 variable "cicd_vpc_cidr" {
   description = "The CIDR block for the CICD VPC."
   type        = string
