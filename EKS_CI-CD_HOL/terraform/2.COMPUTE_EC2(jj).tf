@@ -6,7 +6,7 @@ resource "aws_instance" "harbor" {
   ami           = "ami-0e4a3e6b40b4d3da3"
   instance_type = "t3.medium"
   vpc_security_group_ids = [ 
-    aws_security_group.cicd-sg.id,
+    aws_security_group.harbor-sg.id,
    ]
   subnet_id = aws_subnet.cicd_public[0].id
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
@@ -30,7 +30,7 @@ resource "aws_instance" "jenkins" {
   ami           = "ami-0bbb50e83433280ad"
   instance_type = "t3.medium"
   vpc_security_group_ids = [ 
-    aws_security_group.cicd-sg.id,
+    aws_security_group.jenkins-sg.id,
    ]
   subnet_id = aws_subnet.cicd_public[1].id
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
