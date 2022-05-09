@@ -9,15 +9,15 @@ packer {
   required_version = ">= 1.8.0, < 2.0.0"
 }
 
-source "amazon-ebs" "HOL_Harbor_AMI" {
+source "amazon-ebs" "HOL_Harbor_AMI2" {
   //AMI Configuration
   region = "ap-northeast-2"
-  ami_name = "HOL_Harbor_AMI"
-  ami_description = "HOL_Harbor_AMI, created by jintae lee"
+  ami_name = "HOL_Harbor_AMI2"
+  ami_description = "HOL_Harbor_AMI2, created by jintae lee"
   ami_virtualization_type = "hvm"
   ami_users = ["553260261205"]
-  tags = {"Name" : "HOL_Harbor_AMI"}
-  snapshot_tags = {"Name" = "HOL_Harbor_AMI"}
+  tags = {"Name" : "HOL_Harbor_AMI2"}
+  snapshot_tags = {"Name" = "HOL_Harbor_AMI2"}
   //myinstanceprofile = ""
 
   //Run Configuration
@@ -63,10 +63,10 @@ source "amazon-ebs" "HOL_Harbor_AMI" {
 
 build {
   name = "HOL-Jenkins-build"
-  sources = ["source.amazon-ebs.HOL_Harbor_AMI"]
+  sources = ["source.amazon-ebs.HOL_Harbor_AMI2"]
   
   provisioner "shell" {
-    only = ["amazon-ebs.HOL_Harbor_AMI"] //only or except는 prefix(source)를 생략  
+    only = ["amazon-ebs.HOL_Harbor_AMI2"] //only or except는 prefix(source)를 생략  
     scripts = fileset(".", "scripts/harbor_install.sh")
   }
 
