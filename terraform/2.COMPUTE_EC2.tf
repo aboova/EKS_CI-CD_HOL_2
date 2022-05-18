@@ -3,7 +3,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_instance" "harbor" {
-  ami           = "ami-0f8c6c25f59ebfed1"
+  ami           = "ami-0db2e8cb9acee7660"
   instance_type = "t3.medium"
   vpc_security_group_ids = [ 
     aws_security_group.harbor-sg.id,
