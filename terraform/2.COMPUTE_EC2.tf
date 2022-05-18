@@ -3,7 +3,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_instance" "harbor" {
-  ami           = "ami-02e05347a68e9c76f"
+  ami           = "ami-0f8c6c25f59ebfed1"
   instance_type = "t3.medium"
   vpc_security_group_ids = [ 
     aws_security_group.cicd-sg.id,
@@ -27,7 +27,7 @@ resource "aws_instance" "harbor" {
 }
 
 resource "aws_instance" "jenkins" {
-  ami           = "ami-02e05347a68e9c76f"
+  ami           = "ami-0bbb50e83433280ad"
   instance_type = "t3.medium"
   vpc_security_group_ids = [ 
     aws_security_group.cicd-sg.id,
