@@ -10,7 +10,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose version
 
-#harbor install
-wget https://github.com/goharbor/harbor/releases/download/v2.5.0/harbor-offline-installer-v2.5.0.tgz
-tar xvzf harbor-offline-installer-v2.5.0.tgz
-cd harbor
+#harbor install 부분 주석 처리
+# wget https://github.com/goharbor/harbor/releases/download/v2.5.0/harbor-offline-installer-v2.5.0.tgz
+# tar xvzf harbor-offline-installer-v2.5.0.tgz
+# cd harbor
