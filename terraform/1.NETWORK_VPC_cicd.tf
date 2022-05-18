@@ -1,8 +1,3 @@
-# AWS Virtual Private Cloud
-
-## Configures AWS provider
-
-
 resource "aws_vpc" "vpc_cicd" {
   cidr_block = var.cicd_vpc_cidr
   enable_dns_hostnames = var.enable_dns_hostnames
@@ -27,32 +22,7 @@ resource "aws_internet_gateway" "cicd_igw" {
       )
   }
 }
-# resource "aws_eip" "eip_for_nat" {
-#   depends_on = [aws_route_table.public] 
-#   count = local.nat_gateway_count 
-#   tags = {
-#     Name = format(
-#       "%s-%s-NAT-%s",
-#       var.company,
-#       var.environment,
-#       element(split("", local.public_subnets[count.index].zone), length(local.public_subnets[count.index].zone) - 1)
-#     )
-#   }
-# }
-# resource "aws_nat_gateway" "nat_gw" {
-#   depends_on = [aws_eip.eip_for_nat] 
-#   count = local.nat_gateway_count
-#   allocation_id = aws_eip.eip_for_nat[count.index].id
-#   subnet_id = aws_subnet.public[count.index].id
-#   tags = {
-#      Name = format(
-#          "%s-%s-NAT-%s",
-#          var.company,
-#          var.environment,
-#          element(split("", local.public_subnets[count.index].zone), length(local.public_subnets[count.index].zone) - 1)
-#      )
-#    }
-# }
+
 resource "aws_subnet" "cicd_public" {
   count             = length(local.cicd_public_subnets)
   vpc_id            = aws_vpc.vpc_cicd.id

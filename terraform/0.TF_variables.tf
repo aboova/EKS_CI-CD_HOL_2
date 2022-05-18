@@ -26,7 +26,7 @@ variable "cluster_name" {
 ############################
 ## EKS version
 variable "kube_version" {
-  default     = "1.21"
+  default     = "1.21" # 2021.06.01일 기준 최신버전의 쿠버네티스 
 }
 
 ############################
@@ -36,6 +36,8 @@ variable "vpc_cidr" {
   type        = string
   default     = "192.168.0.0/16"
 }
+
+#jenkins, harbor용 vpc 추가 - 이재정
 variable "cicd_vpc_cidr" {
   description = "The CIDR block for the CICD VPC."
   type        = string

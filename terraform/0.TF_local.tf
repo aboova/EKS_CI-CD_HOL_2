@@ -14,6 +14,7 @@ locals {
       cidr = "192.168.1.0/24"
     }
   ]
+  # jenkins, harbor용 subnet 추가 - 이재정
   cicd_public_subnets = [
     {
       purpose = "pub-sev"
