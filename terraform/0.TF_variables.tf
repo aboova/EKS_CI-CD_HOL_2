@@ -17,7 +17,7 @@ variable "region" {
   default = "ap-northeast-2"
 }
 variable "ec2_key_name" {
-  default     = "handsonkey" # EC2 pem 파일 이름을 정의
+  default     = "demo_key" # EC2 pem 파일 이름을 정의
 }
 
 variable "cluster_name" {
